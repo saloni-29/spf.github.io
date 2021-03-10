@@ -43,7 +43,7 @@
                             <th scope="col" class="text-center py-2">Name</th>
                             <th scope="col" class="text-center py-2">E-Mail</th>
                             <th scope="col" class="text-center py-2">Balance</th>
-                            <th scope="col" class="text-center py-2">Details</th>
+                            <th scope="col" class="text-center py-2">Operation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,7 +55,7 @@
                         <td class="py-2"><?php echo $rows['name']?></td>
                         <td class="py-2"><?php echo $rows['email']?></td>
                         <td class="py-2"><?php echo $rows['balance']?></td>
-                        <td><a href="selecteduserdetail.php?id= <?php echo $rows['id'] ;?>"> <button type="button" class="btn">Show Details/Transfer</button></a></td> 
+                        <td><a href="selecteduserdetail.php?id= <?php echo $rows['id'] ;?>"> <button type="button" class="btn">Transact</button></a></td> 
                     </tr>
                 <?php
                     }

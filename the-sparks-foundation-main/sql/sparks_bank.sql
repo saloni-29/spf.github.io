@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 02, 2020 at 08:02 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.6
+-- Generation Time: Oct 19, 2020 at 10:01 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sparksbank`
+-- Database: `sparks_bank`
 --
 
 -- --------------------------------------------------------
@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `transaction` (
-  `sno` int(5) NOT NULL,
+  `sno` int(3) NOT NULL,
   `sender` text NOT NULL,
   `receiver` text NOT NULL,
-  `balance` int(9) NOT NULL,
-  `datetime` date NOT NULL DEFAULT current_timestamp()
+  `balance` int(8) NOT NULL,
+  `datetime` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE `transaction` (
 --
 
 CREATE TABLE `users` (
-  `id` int(5) NOT NULL,
+  `id` int(3) NOT NULL,
   `name` text NOT NULL,
   `email` varchar(30) NOT NULL,
   `balance` int(8) NOT NULL
@@ -53,16 +53,48 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `balance`) VALUES
-(1, 'Philona ', 'philona@gmail.com', 5000),
-(2, 'Nivya', 'nivya@gmail.com', 6000),
-(3, 'Devika', 'devika@gmail.com', 3000),
-(4, 'Neeraja', 'neeraja@gmail.com', 5000),
-(5, 'Sreya', 'sreya@gmail.com', 2000),
-(6, 'Nisha', 'nisha@gmail.com', 6000),
-(7, 'Irene', 'irene@gmail.com', 7000),
-(8, 'Tom', 'tom@gmail.com', 5000),
-(9, 'Jerry', 'jerry@gmail.com', 1000),
-(10, 'Justin', 'justin@gmail.com', 9000);
+(1, 'Salman', 'khan@gmail.com', 50000),
+(2, 'Kiara', 'advani@gmail.com', 30000),
+(3, 'Shahrukh', 'shah@gmail.com', 40000),
+(4, 'Priyanka', 'chopra@gmail.com', 50000),
+(5, 'Shahid', 'kapoor@gmail.com', 40000),
+(6, 'Ranbir', 'singh@gmail.com', 30000),
+(7, 'Deepika', 'padukone@gmail.com', 50000),
+(8, 'Juhi', 'chawla@gmail.com', 40000),
+(9, 'Nick', 'jonas@gmail.com', 30000),
+(10, 'Taapsee', 'pannu@gmail.com', 50000);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `transaction`
+--
+ALTER TABLE `transaction`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `transaction`
+--
+ALTER TABLE `transaction`
+  MODIFY `sno` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
